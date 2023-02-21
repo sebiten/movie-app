@@ -53,11 +53,11 @@ function Movie() {
         onSubmit={handleSearch}
       >
         <label className="text-white">
-          Search Movies:
           <input
             className="bg-gray-200 rounded-md p-2 ml-2 text-black"
             type="text"
             value={searchTerm}
+            placeholder="Search your movie"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </label>
@@ -72,7 +72,7 @@ function Movie() {
         {movies.length > 0
           ? movies.map((movie) => (
               <Link
-              href={`/movie/${movie.imdbID}`}
+              href={`/id/${movie.imdbID}`}
               key={movie.title} className="flex flex-col items-center">
                 <Image
                   src={movie.Poster}
@@ -89,7 +89,7 @@ function Movie() {
             ))
           : defaultMovies.map((movie) => (
               <Link
-              href={`/movie/${movie.imdbID}`}
+              href={`/id/${movie.imdbID}`}
               key={movie.Title} className="flex flex-col items-center">
                 <Image
                   src={movie.Poster}
