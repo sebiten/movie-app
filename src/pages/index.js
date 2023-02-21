@@ -15,9 +15,11 @@ export default function Home() {
         <NavBar/>
         <div>
           <h1>Movie app</h1>
-          <Movies/>
+          <Movies
+          />
         </div>
       </main>
     </>
   );
 }
+
