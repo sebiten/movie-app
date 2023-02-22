@@ -65,6 +65,14 @@ export const MovieProvider = ({ children }) => {
       Poster:
         "https://m.media-amazon.com/images/M/MV5BODc5ZDZmNTEtZDJjZC00ZmMzLWJlZWQtOWNiODI5YjE0YzBmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
     },
+    {
+      Title: "Click",
+      Year: "2006",
+      imdbID: "tt0381061",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMTA1MTUxNDY4NzReQTJeQWpwZ15BbWU2MDE3ODAxNw@@._V1_SX300.jpg",
+    },
     
   ]);
 

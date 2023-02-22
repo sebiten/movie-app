@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Movies from "@/components/Movies";
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
@@ -18,6 +19,10 @@ export default function Home() {
           <Movies />
         </div>
       </main>
+      <footer>
+        <Footer/>
+
+      </footer>
     </>
   );
 }
