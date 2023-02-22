@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFilms from "hooks/useMovies";
 
 function SingleMovie({
@@ -28,7 +28,29 @@ function SingleMovie({
   tuntime,
   imdbID,
 }) {
-  const { favorites, setFavorites, isFavorite, setIsFavorite } = useFilms();
+  
+  const { favorites, setFavorites, isFavorite, setIsFavorite,  } = useFilms();
+
+  useEffect(() => {
+    const isFavorite = favorites.some((favorite) => favorite.imdbID === imdbID);
+    setIsFavorite(isFavorite);
+  }, [setIsFavorite, favorites]); // permits the user to favorite a movie
+  // and then unfavorite it
+  // and then favorite it again
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      const newFavorites = favorites.filter(
+        (favorite) => favorite.imdbID !== imdbID
+      );
+      setFavorites(newFavorites);
+      setIsFavorite(false);
+    } else {
+      const newFavorites = [...favorites, { title, year, poster, imdbID }];
+      setFavorites(newFavorites);
+      setIsFavorite(true);
+    }
+  };
+
 
   return (
     <div className="text-white px-4 sm:px-6 md:px-8 w-1/2 mx-auto">
@@ -39,7 +61,7 @@ function SingleMovie({
             <div className="flex items-center justify-center mx-auto">
               <Image
                 className="rounded-lg mx-auto"
-                width={550}
+                width={100}
                 height={500}
                 src={poster}
                 alt={title}
@@ -123,24 +145,7 @@ function SingleMovie({
               Go to IMDb
             </Link>
             <button
-              onClick={(e) => {
-                if (isFavorite) {
-                  setFavorites(
-                    Object.fromEntries(
-                      Object.entries(favorites).filter(
-                        ([key, value]) => key !== imdbID
-                      )
-                    )
-                  );
-                  setIsFavorite(false);
-                } else {
-                  setFavorites({
-                    ...favorites,
-                    [imdbID]: { imdbID, title, poster },
-                  });
-                  setIsFavorite(true);
-                }
-              }}
+              onClick={handleFavoriteClick}
               className="text-center text-2xl font-bold text-white bg-amber-..."
             >
               {isFavorite ? "Remove from favorites" : "Add to favorites"}

@@ -1,6 +1,5 @@
 import NavBar from "@/components/NavBar";
 import SingleMovie from "@/components/SingleMovie";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -59,6 +58,7 @@ export default function MovieDetails() {
           production={movie.Production}
           website={movie.Website}
           response={movie.Response}
+          
         />
       </div>
     </div>
