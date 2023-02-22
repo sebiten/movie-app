@@ -35,6 +35,34 @@ function Movie() {
       Type: "movie",
       Poster:"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
     },
+    {
+      Title: "The Dark Knight",
+      Year: "2008",
+      imdbID: "tt0468569",
+      Type: "movie",
+      Poster:"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Dark Knight",
+      Year: "2008",
+      imdbID: "tt0468569",
+      Type: "movie",
+      Poster:"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Dark Knight",
+      Year: "2008",
+      imdbID: "tt0468569",
+      Type: "movie",
+      Poster:"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+    },
+    {
+      Title: "The Dark Knight",
+      Year: "2008",
+      imdbID: "tt0468569",
+      Type: "movie",
+      Poster:"https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+    },
   ]);
 
   const handleSearch = async (event) => {
@@ -68,7 +96,7 @@ function Movie() {
           Search
         </button>
       </form>
-      <article className="text-white grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 mt-12 ">
+      <article className="text-white grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 mt-12 w-1/2 mx-auto">
         {movies.length > 0
           ? movies.map((movie) => (
               <Link

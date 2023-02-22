@@ -1,3 +1,5 @@
+import NavBar from "@/components/NavBar";
+import SingleMovie from "@/components/SingleMovie";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -26,57 +28,39 @@ export default function MovieDetails() {
   }
 
   return (
-    <div className="text-white px-4 sm:px-6 md:px-8 m-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-bold mb-4">{movie.Title}</h1>
-          <div className="flex flex-wrap mb-4">
-            <div className="sm:w-auto sm:mr-4 mb-4 sm:mb-0 flex items-center justify-center">
-              <Image
-                className="rounded-lg"
-                width={300}
-                height={450}
-                src={movie.Poster}
-                alt={movie.Title}
-              />
-            </div>
-            <div className="">
-              <p className="text-xl leading-8">{movie.Plot}</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="border p-4">
-              <p className="text-xl font-semibold">Released:</p>
-              <p className="text-xl">{movie.Released}</p>
-              <p className="text-xl font-semibold mt-4">Runtime:</p>
-              <p className="text-xl">{movie.Runtime}</p>
-              <p className="text-xl font-semibold mt-4">Genre:</p>
-              <p className="text-xl">{movie.Genre}</p>
-              <p className="text-xl font-semibold mt-4">Director:</p>
-              <p className="text-xl">{movie.Director}</p>
-              <p className="text-xl font-semibold mt-4">Writer:</p>
-              <p className="text-xl">{movie.Writer}</p>
-            </div>
-            <div className="border p-4">
-              <p className="text-xl font-semibold">Metascore:</p>
-              <p className="text-xl">{movie.Metascore}</p>
-              <p className="text-xl font-semibold mt-4">IMDb Rating:</p>
-              <p className="text-xl">{movie.imdbRating}</p>
-              <p className="text-xl font-semibold mt-4">IMDb Votes:</p>
-              <p className="text-xl">{movie.imdbVotes}</p>
-              <p className="text-xl font-semibold mt-4">Box Office:</p>
-              <p className="text-xl">{movie.BoxOffice}</p>
-              <p className="text-xl font-semibold mt-4">Production:</p>
-              <p className="text-xl">{movie.Production}</p>
-              <p className="text-xl font-semibold mt-4">Website:</p>
-              <p className="text-xl">{movie.Website}</p>
-            </div>
-          </div>
-          </div>
-        </div>
+    <div className="flex flex-col h-screen">
+      <div className="fixed top-0 w-full z-10">
+        <NavBar />
+      </div>
+      <div className="flex-grow pt-36">
+        <SingleMovie
+          title={movie.Title}
+          year={movie.Year}
+          rated={movie.Rated}
+          released={movie.Released}
+          runtime={movie.Runtime}
+          genre={movie.Genre}
+          director={movie.Director}
+          writer={movie.Writer}
+          actors={movie.Actors}
+          plot={movie.Plot}
+          language={movie.Language}
+          country={movie.Country}
+          awards={movie.Awards}
+          poster={movie.Poster}
+          ratings={movie.Ratings}
+          metascore={movie.Metascore}
+          imdbRating={movie.imdbRating}
+          imdbVotes={movie.imdbVotes}
+          imdbID={movie.imdbID}
+          type={movie.Type}
+          dvd={movie.DVD}
+          boxOffice={movie.BoxOffice}
+          production={movie.Production}
+          website={movie.Website}
+          response={movie.Response}
+        />
+      </div>
     </div>
   );
 }
-
