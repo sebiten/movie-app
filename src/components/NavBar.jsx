@@ -25,6 +25,12 @@ const NavBar = () => {
               >
                 Películas
               </Link>
+              <Link
+                href="/favorites"
+                className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Favorites
+              </Link>
             </div>
           </div>
         </div>
