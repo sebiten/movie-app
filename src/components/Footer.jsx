@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
@@ -24,19 +25,19 @@ function Footer() {
             <h4 className="text-lg mb-4">Follow Us</h4>
             <ul className="list-reset">
               <li className="inline-block mr-2">
-                <a href="#" className="text-white hover:text-gray-400">
+                <Link href="#" className="text-white hover:text-gray-400">
                   <i className="fab fa-facebook fa-2x"></i>
-                </a>
+                </Link>
               </li>
               <li className="inline-block mr-2">
-                <a href="#" className="text-white hover:text-gray-400">
+                <Link href="#" className="text-white hover:text-gray-400">
                   <i className="fab fa-twitter fa-2x"></i>
-                </a>
+                </Link>
               </li>
               <li className="inline-block mr-2">
-                <a href="#" className="text-white hover:text-gray-400">
+                <Link href="#" className="text-white hover:text-gray-400">
                   <i className="fab fa-instagram fa-2x"></i>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
