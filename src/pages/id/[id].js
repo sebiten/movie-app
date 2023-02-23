@@ -58,7 +58,6 @@ export default function MovieDetails() {
           production={movie.Production}
           website={movie.Website}
           response={movie.Response}
-          
         />
       </div>
     </div>
