@@ -8,6 +8,7 @@ export const FilmsProvider = ({ children }) => {
   const [favoriteList, setFavoriteList] = useState([]); // this is the list of movies that are favorited
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
+  const [series, setSeries] = useState([]);
   const [defaultMovies, setDefaultMovies] = useState([
     {
       Title: "The Shawshank Redemption",
@@ -89,10 +90,13 @@ export const FilmsProvider = ({ children }) => {
       Year: "1993",
       imdbID: "tt0107290",
       Type: "movie",
+      Priority: "1",
       Poster:
         "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg",
     },
   ]);
+
+
 
   useEffect(() => {
     setMovies(defaultMovies);
@@ -104,6 +108,15 @@ export const FilmsProvider = ({ children }) => {
       setFavorites(favoriteMovies);
     }
   }, []);
+
+  const fetchSeries = async () => {
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=494df15b&s=${searchTerm}&type=series`
+    );
+    const data = await response.json();
+    setSeries(data.Search);
+  };
+
 
   const handleSearch = async (event) => {
     event.preventDefault();
@@ -143,6 +156,10 @@ export const FilmsProvider = ({ children }) => {
         setFavoriteList,
         defaultMovieHero,
         setDefaultMovieHero,
+        series,
+        setSeries,
+        fetchSeries,
+        
       }}
     >
       {children}

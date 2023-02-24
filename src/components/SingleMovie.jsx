@@ -52,7 +52,7 @@ function SingleMovie({
   };
 
   return (
-    <div className="text-white px-4 sm:px-6 md:px-8 w-1/2 mx-auto">
+    <div className="text-white px-4 sm:px-6 md:px-8 xl:w-1/2 sm:w-full mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-4xl font-bold mb-4">{title}</h1>
@@ -72,61 +72,62 @@ function SingleMovie({
           </div>
         </div>
         <div>
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="border p-4">
+          <h3 className="text-4xl font-bold mb-4">Movie information</h3>
+          <div className="grid grid-cols-2 gap-2 mb-4 mt-5">
+            <div>
               <p className=" font-semibold">Released:</p>
-              <p className="">{teleased}</p>
+              <p>{teleased}</p>
               <p className=" font-semibold">Runtime:</p>
-              <p className="">{tuntime}</p>
+              <p>{tuntime}</p>
               <p className=" font-semibold">Genre:</p>
-              <p className="">{genre}</p>
+              <p>{genre}</p>
               <p className=" font-semibold">Director:</p>
-              <p className="">{director}</p>
+              <p>{director}</p>
               <p className=" font-semibold">Writer:</p>
-              <p className="">{writer}</p>
+              <p>{writer}</p>
             </div>
-            <div className="border p-4">
+            <div className="mx-4">
               <p className=" font-semibold">Metascore:</p>
-              <p className="">{metascore}</p>
+              <p>{metascore}</p>
               <p className=" font-semibold">IMDb Rating:</p>
-              <p className="">{imdbRating}</p>
+              <p>{imdbRating}</p>
               <p className=" font-semibold">IMDb Votes:</p>
-              <p className="">{imdbVotes}</p>
+              <p>{imdbVotes}</p>
               <p className=" font-semibold">Box Office:</p>
-              <p className="">{boxOffice}</p>
+              <p>{boxOffice}</p>
               <p className=" font-semibold">Production:</p>
-              <p className="">{production}</p>
+              <p>{production}</p>
               <p className=" font-semibold">Website:</p>
-              <p className="">{website}</p>
+              <p>{website}</p>
             </div>
-            <div className="border p-4">
+            <div className="mt-6">
               <p className=" font-semibold">Actors:</p>
-              <p className="">{actors}</p>
+              <p>{actors}</p>
 
               <p className=" font-semibold">Awards:</p>
-              <p className="">{awards}</p>
+              <p>{awards}</p>
 
               <p className=" font-semibold">Country:</p>
-              <p className="">{country}</p>
+              <p>{country}</p>
 
               <p className=" font-semibold">Language</p>
-              <p className="">{language}</p>
+              <p>{language}</p>
 
               <p className=" font-semibold">Rated:</p>
-              <p className="">{rated}</p>
+              <p>{rated}</p>
             </div>
             <div>
-              <div className="border p-8 border-dashed">
+              <div className="border-dashed mx-4 mt-6">
                 <p className=" font-semibold">Released:</p>
-                <p className="">{released}</p>
+                <p>{released}</p>
                 <p className=" font-semibold">Runtime:</p>
-                <p className="">{runtime}</p>
+                <p>{runtime}</p>
                 <p className=" font-semibold">Genre:</p>
-                <p className="">{genre}</p>
+                <p>{genre}</p>
                 <p className=" font-semibold">Director:</p>
-                <p className="">{director}</p>
+                <p>{director}</p>
                 <p className=" font-semibold">Writer:</p>
-                <p className="">{writer}</p>
+                <p>{writer}</p>
                 <br></br>
               </div>
             </div>

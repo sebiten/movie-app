@@ -15,9 +15,8 @@ const NavBar = () => {
                   alt="logo"
                   width={110}
                   height={70}
-                  className="rounded-full"
+                  className="rounded-full w-28 h-28"
                 />
-
               </Link>
             </div>
             <div className="flex justify-center items-center">
