@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Movies from "@/components/Movies";
 import NavBar from "@/components/NavBar";
+import Series from "@/components/Series";
 import Head from "next/head";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <div>
           <Movies />
+          <Series />
         </div>
       </main>
       <footer>

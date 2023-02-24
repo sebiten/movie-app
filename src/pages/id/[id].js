@@ -1,30 +1,8 @@
 import NavBar from "@/components/NavBar";
 import SingleMovie from "@/components/SingleMovie";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
-export default function MovieDetails() {
-  const router = useRouter();
-  const { id } = router.query;
-  const [movie, setMovie] = useState(null);
-
-  useEffect(() => {
-    async function fetchMovie() {
-      const res = await fetch(
-        `http://www.omdbapi.com/?apikey=494df15b&i=${id}`
-      );
-      const data = await res.json();
-      setMovie(data);
-    }
-
-    if (id) {
-      fetchMovie();
-    }
-  }, [id]);
-
-  if (!movie) {
-    return <p>Loading...</p>;
-  }
+const MovieDetails = ({ movie }) => {
+  console.log(movie);
 
   return (
     <div className="flex flex-col h-screen">
@@ -62,4 +40,14 @@ export default function MovieDetails() {
       </div>
     </div>
   );
-}
+};
+
+MovieDetails.getInitialProps = async (context) => {
+  const id = context.query.id;
+  const res = await fetch(`http://www.omdbapi.com/?apikey=4a3b711b&i=${id}`);
+  const movie = await res.json();
+
+  return { movie };
+};
+
+export default MovieDetails;

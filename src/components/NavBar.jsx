@@ -26,12 +26,7 @@ const NavBar = () => {
               >
                 Inicio
               </Link>
-              <Link
-                href="/peliculas"
-                className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Películas
-              </Link>
+            
               <Link
                 href="/favorites"
                 className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
