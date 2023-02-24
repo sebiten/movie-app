@@ -21,7 +21,7 @@ const FavoriteButton = ({ isFavorite, handleFavoriteClick,  }) => {
         />
       ) : (
         <Image
-          src="/StarEmpty.svg"
+          src="/StarFull.svg"
           alt="heart-regular"
           width={30}
           height={30}

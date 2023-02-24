@@ -1,8 +1,6 @@
 import React from "react";
-import useFilms from "hooks/useMovies";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useFilms } from "hooks/useFilms";
 
 function Peliculas() {
   const { movies, setMovies, defaultMovies, setDefaultMovies, searchTerm, setSearchTerm, handleSearch } = useFilms();

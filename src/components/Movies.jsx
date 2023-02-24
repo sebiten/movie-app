@@ -1,20 +1,22 @@
+import { useFilms } from "hooks/useFilms";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import useFilms from "hooks/useMovies";
 
 function Movie() {
   const { movies, defaultMovies, searchTerm, setSearchTerm, handleSearch } = useFilms();
   
   return (
-    <div className="my-44">
+    <div className="my-20 w-1/2 mx-auto bg-black p-6 rounded-lg" >
+      <h1 className="text-center text-white text-3xl font-bold my-10">Watch your favorites movies here!</h1>
       <form
-        className="flex flex-col md:flex-row sm:flex-row items-center justify-center"
+        className="flex flex-col md:flex-row sm:flex-row items-center justify-center w-1/2 mx-auto"
         onSubmit={handleSearch}
       >
         <label className="text-white">
+          
           <input
-            className="bg-gray-200 rounded-md p-2  text-black"
+            className="bg-gray-200 rounded-md p-2 text-black sm:w-[300px] md:w-[300px] lg:w-[300px] xl:w-[300px]"
             type="text"
             value={searchTerm}
             placeholder="Search your movie"
@@ -28,7 +30,7 @@ function Movie() {
           Search
         </button>
       </form>
-      <article className="text-white grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 mt-12 w-1/2 mx-auto gap-10">
+      <article className="text-white grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 mt-12 gap-10">
         {movies?.length > 0
           ? movies.map((movie) => (
               <Link

@@ -1,10 +1,9 @@
-import useFilms from "hooks/useMovies";
+import { useFilms } from "hooks/useFilms";
 import Image from "next/image";
 import Link from "next/link";
 
 function FavoritesPage() {
   const { favorites, setFavorites } = useFilms();
-  console.log(favorites);
 
   return (
     <>

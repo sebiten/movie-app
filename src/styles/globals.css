@@ -1,11 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 
 .bg-nav {
   background-color: rgba(0, 0, 0, 0.569);
 }
 body {
-  background-color: black;
+  background-color: rgb(138, 16, 16);
+}
+.slick-dots li button:before {
+  margin-top: 0px;
+  font-size: 11px;
+  color: white;
+}
+.slick-dots li.slick-active button:before {
+  color: white;
 }

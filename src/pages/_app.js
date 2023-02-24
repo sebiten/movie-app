@@ -1,9 +1,10 @@
 import "@/styles/globals.css";
-import { MovieProvider } from "context/Movieprovider";
+import { FilmsProvider } from "context/FilmsProvider";
+
 export default function App({ Component, pageProps }) {
   return (
-    <MovieProvider>
+    <FilmsProvider>
       <Component {...pageProps} />
-    </MovieProvider>
+    </FilmsProvider>
   );
 }

@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 
-export const MovieContext = createContext();
+export const FilmsContext = createContext();
 
-export const MovieProvider = ({ children }) => {
+export const FilmsProvider = ({ children }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [favorites, setFavorites] = useState([]);
   const [favoriteList, setFavoriteList] = useState([]); // this is the list of movies that are favorited
@@ -73,19 +73,37 @@ export const MovieProvider = ({ children }) => {
       Poster:
         "https://m.media-amazon.com/images/M/MV5BMTA1MTUxNDY4NzReQTJeQWpwZ15BbWU2MDE3ODAxNw@@._V1_SX300.jpg",
     },
-    
+    {
+      Title: "Avatar",
+      Year: "2009",
+      imdbID: "tt0499549",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+    },
+  ]);
+  const [defaultMovieHero, setDefaultMovieHero] = useState([
+    {
+      Title: "Jurassic Park",
+      Description: "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose." , 
+      Year: "1993",
+      imdbID: "tt0107290",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg",
+    },
   ]);
 
   useEffect(() => {
     setMovies(defaultMovies);
   }, [defaultMovies]); // what does dis code?
-  
+
   useEffect(() => {
     const favoriteMovies = JSON.parse(localStorage.getItem("favorites"));
     if (favoriteMovies) {
       setFavorites(favoriteMovies);
     }
-  }, []); 
+  }, []);
 
   const handleSearch = async (event) => {
     event.preventDefault();
@@ -96,9 +114,6 @@ export const MovieProvider = ({ children }) => {
     setMovies(data.Search);
   };
 
- 
-
-
   useEffect(() => {
     const favoriteList = JSON.parse(localStorage.getItem("favorites"));
     if (favoriteList) {
@@ -106,15 +121,12 @@ export const MovieProvider = ({ children }) => {
     }
   }, [setFavorites]); // this is the list of movies that are favorited
 
-
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]); 
-  
-
+  }, [favorites]);
 
   return (
-    <MovieContext.Provider
+    <FilmsContext.Provider
       value={{
         searchTerm,
         setSearchTerm,
@@ -129,9 +141,11 @@ export const MovieProvider = ({ children }) => {
         setIsFavorite,
         favoriteList,
         setFavoriteList,
+        defaultMovieHero,
+        setDefaultMovieHero,
       }}
     >
       {children}
-    </MovieContext.Provider>
+    </FilmsContext.Provider>
   );
 };
