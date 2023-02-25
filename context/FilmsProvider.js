@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
+
 export const FilmsContext = createContext();
 
 export const FilmsProvider = ({ children }) => {
@@ -18,23 +19,16 @@ export const FilmsProvider = ({ children }) => {
     }
   }, []);
 
-  const fetchSeries = async () => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_OMDB_API}&s=${searchTerm}&type=series`
-    );
-    const data = await response.json();
-    setSeries(data.Search);
-  };
 
   const handleSearch = async (event) => {
     event.preventDefault();
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_OMDB_API}&s=${searchTerm}&type=movie`
+      `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${searchTerm}`
     );
     const data = await response.json();
     setMovies(data.Search);
   };
-
+  
   useEffect(() => {
     const favoriteList = JSON.parse(localStorage.getItem("favorites"));
     if (favoriteList) {
@@ -60,7 +54,6 @@ export const FilmsProvider = ({ children }) => {
         setIsFavorite,
         favoriteList,
         setFavoriteList,
-        fetchSeries,
       }}
     >
       {children}
