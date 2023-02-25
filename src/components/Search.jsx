@@ -1,11 +1,21 @@
 import { useFilms } from "hooks/useFilms";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 function Search() {
-  const { searchTerm, setSearchTerm, handleSearch, movies, setMovies } =
-    useFilms();
+  const { movies, setMovies } = useFilms();
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_OMDB_API_KEY}${searchTerm}`
+    );
+    const data = await response.json();
+    setMovies(data.Search);
+  };
 
   return (
     <>
