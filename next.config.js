@@ -4,7 +4,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://www.omdbapi.com/:path*',
+        destination: 'https://www.omdbapi.com/:path*',
       },
     ];
   },
