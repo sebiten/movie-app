@@ -6,5 +6,6 @@ export default function App({ Component, pageProps }) {
     <FilmsProvider>
       <Component {...pageProps} />
     </FilmsProvider>
+
   );
 }

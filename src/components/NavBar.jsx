@@ -33,6 +33,17 @@ const NavBar = () => {
               >
                 Favorites
               </Link>
+              <Link
+                href="/favorites"
+                className="text-white flex gap-4 items-center hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                <Image
+                  src="/github-mark-white.png"
+                  alt="github"
+                  width={30}
+                  height={30}
+                />
+              </Link>
             </div>
           </div>
         </div>

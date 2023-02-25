@@ -34,6 +34,7 @@ function SingleMovie({
   useEffect(() => {
     const isFavorite = favorites.some((favorite) => favorite.imdbID === imdbID);
     setIsFavorite(isFavorite);
+
   }, [setIsFavorite, favorites, imdbID]); // permits the user to favorite a movie
   // and then unfavorite it
   // and then favorite it again
