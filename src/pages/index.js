@@ -9,6 +9,7 @@ import Link from "next/link";
 import Search from "@/components/Search";
 
 export default function Home({ movie }) {
+
   return (
     <>
       <Head>

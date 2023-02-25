@@ -9,10 +9,6 @@ export const FilmsProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
 
-
-
-
-
   useEffect(() => {
     const favoriteMovies = JSON.parse(localStorage.getItem("favorites"));
     if (favoriteMovies) {
@@ -24,17 +20,16 @@ export const FilmsProvider = ({ children }) => {
 
   const fetchSeries = async () => {
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=494df15b&s=${searchTerm}&type=series`
+      `${process.env.NEXT_PUBLIC_OMDB_API}&s=${searchTerm}&type=series`
     );
     const data = await response.json();
     setSeries(data.Search);
   };
 
-
   const handleSearch = async (event) => {
     event.preventDefault();
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=494df15b&s=${searchTerm}&type=movie`
+      `${process.env.NEXT_PUBLIC_OMDB_API}&s=${searchTerm}&type=movie`
     );
     const data = await response.json();
     setMovies(data.Search);
@@ -66,7 +61,6 @@ export const FilmsProvider = ({ children }) => {
         favoriteList,
         setFavoriteList,
         fetchSeries,
-        
       }}
     >
       {children}
