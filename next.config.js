@@ -1,23 +1,40 @@
-// next.config.js
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ['m.media-amazon.com'],
+    domains: "https://www.omdbapi.com",
+    domains: "m.media-amazon.com",
   },
   async headers() {
     return [
       {
-        source: '/(.*?)',
+        source: "/(.*?)",
         headers: [
           {
-            key: 'Content-Security-Policy',
-            value: 'upgrade-insecure-requests',
+            key: "Content-Security-Policy",
+            value: "upgrade-insecure-requests",
           },
         ],
       },
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig;
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "https://www.omdbapi.com",
+        port: "",
+        pathname: "/**/**",
+      },
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
+        port: "",
+        pathname: "/images/**",
+      },
+    ],
+  },
+};
