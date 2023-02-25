@@ -12,13 +12,7 @@ export const FilmsProvider = ({ children }) => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_OMDB_API_KEY}` +
-          searchTerm + // this is the search term
-          `&type=${type}` +
-          `&page=${page}`
-          
-      );
+      const response = await fetch(`https://www.omdbapi.com/?apikey=4a3b711b&s=${searchTerm}`);
       if (!response.ok) {
         throw new Error("Hubo un problema al buscar las películas.");
       }
@@ -61,6 +55,9 @@ export const FilmsProvider = ({ children }) => {
         favoriteList,
         setFavoriteList,
         handleSearch,
+        searchTerm,
+        setSearchTerm,
+          
       }}
     >
       {children}

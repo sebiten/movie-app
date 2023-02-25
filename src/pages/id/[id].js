@@ -44,7 +44,7 @@ const MovieDetails = ({ movie }) => {
 
 MovieDetails.getInitialProps = async (context) => {
   const id = context.query.id;
-  const res = await fetch(`http://www.omdbapi.com/?apikey=4a3b711b&i=${id}`);
+  const res = await fetch(`https://www.omdbapi.com/?apikey=4a3b711b&i=${id}`);
   const movie = await res.json();
 
   return { movie };

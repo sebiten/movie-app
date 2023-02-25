@@ -4,19 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 function Search() {
-  const { movies, setMovies } = useFilms();
-
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=4a3b711b`)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.Search);
-      });
-  };
-  
+  const { movies, setMovies, handleSearch, searchTerm, setSearchTerm} = useFilms();
 
   return (
     <>
