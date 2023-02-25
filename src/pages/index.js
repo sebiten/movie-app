@@ -8,7 +8,7 @@ import { defaultSeries } from "DataMovies/defaultSeries";
 import Link from "next/link";
 import Search from "@/components/Search";
 
-export default function Home() {
+export default function Home({ movie }) {
 
   return (
     <>
