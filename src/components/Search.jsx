@@ -8,14 +8,15 @@ function Search() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = async (event) => {
-    event.preventDefault();
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_OMDB_API_KEY}${searchTerm}`
-    );
-    const data = await response.json();
-    setMovies(data.Search);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=4a3b711b`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMovies(data.Search);
+      });
   };
+  
 
   return (
     <>

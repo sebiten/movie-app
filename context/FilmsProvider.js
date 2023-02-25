@@ -1,14 +1,33 @@
 import { createContext, useEffect, useState } from "react";
 
-
 export const FilmsContext = createContext();
 
 export const FilmsProvider = ({ children }) => {
   const [isFavorite, setIsFavorite] = useState(() => false);
   const [favorites, setFavorites] = useState([]);
   const [favoriteList, setFavoriteList] = useState([]); // this is the list of movies that are favorited
-  const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_OMDB_API_KEY}` +
+          searchTerm + // this is the search term
+          `&type=${type}` +
+          `&page=${page}`
+          
+      );
+      if (!response.ok) {
+        throw new Error("Hubo un problema al buscar las películas.");
+      }
+      const data = await response.json();
+      setMovies(data.Search);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     const favoriteMovies = JSON.parse(localStorage.getItem("favorites"));
@@ -19,16 +38,6 @@ export const FilmsProvider = ({ children }) => {
     }
   }, []);
 
-
-  const handleSearch = async (event) => {
-    event.preventDefault();
-    const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${searchTerm}`
-    );
-    const data = await response.json();
-    setMovies(data.Search);
-  };
-  
   useEffect(() => {
     const favoriteList = JSON.parse(localStorage.getItem("favorites"));
     if (favoriteList) {
@@ -43,17 +52,15 @@ export const FilmsProvider = ({ children }) => {
   return (
     <FilmsContext.Provider
       value={{
-        searchTerm,
-        setSearchTerm,
         movies,
         setMovies,
-        handleSearch,
         favorites,
         setFavorites,
         isFavorite,
         setIsFavorite,
         favoriteList,
         setFavoriteList,
+        handleSearch,
       }}
     >
       {children}
