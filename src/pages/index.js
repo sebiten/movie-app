@@ -45,7 +45,7 @@ export default function Home({ movie }) {
 
         <div className="grid grid-cols-2 xl:grid-cols-4 sm:grid-cols-3 sm:w-full mx-auto my-10 xl:w-1/2 gap-4">
           {defaultSeries.map((series) => (
-            <Link href={`/id/${movie?.imdbID}`} key={series.imdbID}>
+            <Link href={`/id/${series?.imdbID}`} key={series.imdbID}>
               <Image
                 src={series.Poster}
                 alt={series.Title}
