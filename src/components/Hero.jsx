@@ -7,25 +7,25 @@ import NavBar from "./NavBar";
 function Hero() {
   const images = [
     {
-      src: "/1.jpg",
+      src: "/1.webp",
       height: 3840,
       width: 2160,
       alt: "Hero 1",
     },
     {
-      src: "/2.jpg",
+      src: "/2.webp",
       height: 3840,
       width: 2160,
       alt: "Hero 2",
     },
     {
-      src: "/3.jpg",
+      src: "/3.webp",
       height: 3840,
       width: 2160,
       alt: "Hero 3",
     },
     {
-      src: "/1.jpg",
+      src: "/1.webp",
       height: 3840,
       width: 2160,
       alt: "Hero 3",
