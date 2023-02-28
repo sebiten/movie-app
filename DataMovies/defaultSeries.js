@@ -24,14 +24,6 @@ export const defaultSeries = [
       "https://m.media-amazon.com/images/M/MV5BZmU5NTcwNjktODIwMi00ZmZkLTk4ZWUtYzVjZWQ5ZTZjN2RlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
   },
   {
-    Title: "The Flash",
-    Year: "2014–",
-    imdbID: "tt3107288",
-    Type: "series",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BMDIzNzYwNTctZWY4Mi00YjQ2LWI5YWYtMzdmNDgwMGI4Yzk1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
-  },
-  {
     Title: "The Simpsons",
     Year: "1989–",
     imdbID: "tt0096697",

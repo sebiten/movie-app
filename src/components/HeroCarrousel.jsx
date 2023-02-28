@@ -25,7 +25,7 @@ const HeroCarousel = ({ images }) => {
       {images.map((image, index) => (
         <div key={index}>
           <div className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[900px]">
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
             <Image
               width={500}
               height={500}
