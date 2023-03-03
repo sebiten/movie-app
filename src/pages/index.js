@@ -22,15 +22,10 @@ export default function Home({ movie }) {
       </Head>
       <Hero />
       <main className="bg-black mt-20 text-white text-center mx-auto">
-        <h2 className="text-center font-bold text-white text-2xl pt-24  uppercase">
-          Watch your favorites movies now!
-        </h2>
         <Search />
-        <h2 className="text-center font-bold text-white text-2xl uppercase">
-          Or why not your favorites series!
-        </h2>
-        <Movie/>
-        <Series/>
+        <Movie />
+
+        <Series />
         <Section />
       </main>
       <footer>

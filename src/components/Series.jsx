@@ -6,6 +6,9 @@ import { defaultSeries } from "DataMovies/defaultSeries";
 function Series() {
   return (
     <div>
+      <h2 className="text-center font-bold text-white text-2xl uppercase">
+        Or why not your favorites series!
+      </h2>
       <div className="grid grid-cols-2 xl:grid-cols-4 sm:grid-cols-3 sm:w-full mx-auto my-10 xl:w-1/2 gap-4 py-10">
         {defaultSeries.map((series) => (
           <div
