@@ -9,10 +9,10 @@
   background-color: rgba(0, 0, 0, 0.569);
 }
 body {
-  background-color: rgb(138, 16, 16);
+  background-color: #8a1010;
 }
 .slick-dots li button:before {
-  margin-top: 22px;
+  margin-top: 25px;
   font-size: 11px;
   color: white;
 }

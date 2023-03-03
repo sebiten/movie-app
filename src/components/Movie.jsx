@@ -5,9 +5,6 @@ import { defaultMovies } from "DataMovies/defaultMovies";
 function Movie() {
   return (
     <div>
-      <h2 className="text-center font-bold text-white text-2xl uppercase">
-        Watch your favorites movies now!
-      </h2>
       <div className="grid grid-cols-2 xl:grid-cols-4 sm:grid-cols-3 sm:w-full mx-auto my-10 xl:w-1/2 gap-4 py-10">
         {defaultMovies.map((movie) => (
           <div

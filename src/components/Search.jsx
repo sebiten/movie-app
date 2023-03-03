@@ -4,10 +4,14 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 function Search() {
-  const { movies, setMovies, handleSearch, searchTerm, setSearchTerm} = useFilms();
+  const { movies, setMovies, handleSearch, searchTerm, setSearchTerm } =
+    useFilms();
 
   return (
     <>
+      <h2 className="pt-10 text-center font-bold text-white text-2xl uppercase">
+        Watch your favorites movies now!
+      </h2>
       <form
         className="flex flex-col md:flex-row sm:flex-row items-center justify-center w-1/2 mx-auto "
         onSubmit={handleSearch}
@@ -28,7 +32,7 @@ function Search() {
           Search
         </button>
       </form>
-      <div className="grid grid-cols-2 xl:grid-cols-4 sm:grid-cols-3 sm:w-full mx-auto my-10 xl:w-1/2 gap-4">
+      <div className="grid grid-cols-2 xl:grid-cols-4 sm:grid-cols-3 sm:w-full mx-auto  xl:w-1/2 gap-4">
         {movies?.map((movie) => (
           <Link
             href={`/id/${movie.imdbID}`}
