@@ -23,7 +23,7 @@ function Section() {
         ></div>
         <div className="relative z-10 container mx-auto px-4">
           <h2 className="text-center text-3xl font-bold uppercase">
-            Mira las mejores series y peliculas aqui!
+            Welcome to the best movies and series
           </h2>
           <Image
             src="/logo.png"
@@ -33,14 +33,14 @@ function Section() {
             className="mx-auto"
           />
           <p className="text-white text-lg sm:text-xl lg:text-xl text-center">
-            En cinema te ofrecemos las mejores peliculas y series para que
-            disfrutes de tu tiempo libre
+            In this section you can see the best movies and series, you can also
+            add them to your favorites and see them later.
             
           </p>
         </div>
         <div className="relative flex items-center justify-center">
           <button className="flex items-center justify-center mt-4 rounded-lg p-4 bg-[#8a1010] text-white text-sm uppercase rounded-b-md hover:bg-red-600 transition-colors duration-300">
-            <Link href="/favorites">Ver tus peliculas favoritas</Link>
+            <Link href="/favorites">Watch your favorites</Link>
           </button>
         </div>
       </div>

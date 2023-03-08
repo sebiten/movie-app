@@ -9,8 +9,9 @@ function Search() {
 
   return (
     <>
-      <h2 className="pt-10 text-center font-bold text-white text-2xl uppercase">
-        Watch your favorites movies now!
+    <div className="bg-black opacity-70 "></div>
+      <h2 className=" rounded-lg py-4 text-center font-bold text-white text-2xl uppercase">
+        Search your movie or series
       </h2>
       <form
         className="flex flex-col md:flex-row sm:flex-row items-center justify-center w-1/2 mx-auto "
@@ -32,7 +33,7 @@ function Search() {
           Search
         </button>
       </form>
-      <div className="grid grid-cols-2 xl:grid-cols-4 sm:grid-cols-3 sm:w-full mx-auto  xl:w-1/2 gap-4">
+      <div className="grid grid-cols-2 xl:grid-cols-4 sm:grid-cols-3 sm:w-full mx-auto  xl:w-1/2 gap-4 mt-10">
         {movies?.map((movie) => (
           <Link
             href={`/id/${movie.imdbID}`}
